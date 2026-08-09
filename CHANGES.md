@@ -1,6 +1,21 @@
 # Docs changed — 2026-08-09
 
-## New (95)
+## New (13)
+- critter-quest-guides#Advanced Tool Features (Tier 3+)
+- critter-quest-guides#Core Buildings
+- critter-quest-guides/battle-equipment#Amulets (most flexible: ATK, DEF, HP, CC, CD)
+- glossary#Clone Minting System
+- glossary#Gathering
+- glossary#Master Edition Critters
+- glossary#Mystic Mirror
+- glossary#Recipes
+- glossary#Sockets
+- glossary#Swap
+- glossary#Token-Bound
+- glossary#Workshops
+- glossary#Town Durability &#x26; Repair
+
+## Updated (32)
 - about
 - about/critters-lore
 - how-to-play
@@ -8,92 +23,38 @@
 - how-to-play/quick-start
 - how-to-play/select-your-town
 - how-to-play/place-town
-- how-to-play/populate-town
 - how-to-play/mine-items
 - how-to-play/start-gathering
 - how-to-play/fight-monsters
 - how-to-play/fight-monsters/risks-and-rewards
 - how-to-play/fight-monsters/monsters-skills-and-attacks
 - how-to-play/fight-monsters/building-squads
-- how-to-play/fight-monsters/enter-battle
 - how-to-play/fight-monsters/battle-reports
-- how-to-play/fight-monsters/return-time
-- how-to-play/fight-monsters/battle-rewards-and-effects
 - how-to-play/interface
-- how-to-play/interface/1.-profile-management
-- how-to-play/interface/1.-profile-management/history
-- how-to-play/interface/1.-profile-management/resources
-- how-to-play/interface/1.-profile-management/tools
-- how-to-play/interface/1.-profile-management/pfp
 - how-to-play/interface/4.-resources-wallet
 - how-to-play/interface/4.-resources-wallet/swap
-- how-to-play/interface/4.-resources-wallet/deposit
-- how-to-play/interface/4.-resources-wallet/withdraw
 - how-to-play/interface/8.-rewards-system
-- how-to-play/interface/8.-rewards-system/beta-points-leaderboard
-- how-to-play/interface/8.-rewards-system/events-system
 - how-to-play/interface/11.-resource-search
 - how-to-play/interface/14.-critters-hub
 - how-to-play/interface/14.-critters-hub/manage-critters
-- how-to-play/interface/14.-critters-hub/manage-critters/edit-critters
-- how-to-play/interface/14.-critters-hub/manage-critters/edit-critters/promotions
-- how-to-play/interface/14.-critters-hub/manage-critters/edit-critters/level-up
-- how-to-play/interface/14.-critters-hub/gathering-dashboard
-- how-to-play/interface/14.-critters-hub/clone-dashboard
-- how-to-play/interface/14.-critters-hub/squads
-- how-to-play/town-shields-and-raid-protection
-- how-to-play/town-shields-and-raid-protection#Common Messages
-- how-to-play/raiding-and-pvp
-- how-to-play/beach-chests-and-lost-items
-- how-to-play/marketplace
-- how-to-play/migration-center
-- how-to-play/buy-usdquest
-- how-to-play/town-skins
-- how-to-play/terron-quest
-- how-to-play/bytefang-quest
-- how-to-play/visiting-towns-and-brawls
-- critter-quest-guides
 - critter-quest-guides#Forest Resources (Axe)
 - critter-quest-guides#Mining Resources(PickAxe)
 - critter-quest-guides#Digging Resources(Shovel)
+- critter-quest-guides/town-population-management
+- critter-quest-guides/battle-equipment#Gacha Legendaries
+- critter-quest-guides/battle-equipment#Legendary Hats
+- critter-quest-guides/battle-equipment#Legendary Amulets
+- critter-quest-guides/battle-equipment#Set pieces
+- critter-quest-guides/battle-equipment#Hats (DEF, HP, some CC and CD)
+- brand-kit
+- glossary
+
+## Removed (7)
 - critter-quest-guides#Reward System
 - critter-quest-guides#The Mystic Mirror (Oracle)
 - critter-quest-guides#Getting Started Checklist
-- critter-quest-guides/resource-gathering
-- critter-quest-guides/town-placement-and-relocation
-- critter-quest-guides/town-placement-and-relocation#Planning Errors
-- critter-quest-guides/town-population-management
-- critter-quest-guides/town-population-management#Related
-- critter-quest-guides/tools-and-equipping
-- critter-quest-guides/tools-and-equipping#Tool Crafting Locations & Requirements
-- critter-quest-guides/tools-and-equipping#Socket System
-- critter-quest-guides/battle-equipment
-- critter-quest-guides/battle-equipment#Gacha Legendaries
-- critter-quest-guides/battle-equipment#Legendary Hats
 - critter-quest-guides/battle-equipment#Legendary Shields
-- critter-quest-guides/battle-equipment#Legendary Amulets
-- critter-quest-guides/battle-equipment#Set pieces
 - critter-quest-guides/battle-equipment#Weapons (ATK, CC, CD)
-- critter-quest-guides/battle-equipment#Hats (DEF, HP, some CC and CD)
 - critter-quest-guides/battle-equipment#Shields (DEF, HP, high tiers add CC and CD)
 - critter-quest-guides/battle-equipment#Boots (DEF, HP, and negative CT to act sooner)
-- critter-quest-guides/vouchers
-- critter-quest-guides/gacha-wheels
-- critter-quest-guides/town-repair
-- critter-quest-guides/potions-and-titans-shield
-- critter-quest-guides/building-upgrade-costs
-- critter-quest-guides/building-upgrade-costs#Town Hall
-- critter-quest-guides/building-upgrade-costs#Walls
-- critter-quest-guides/building-upgrade-costs#Bank
-- critter-quest-guides/building-upgrade-costs#Muddy Anvil (Blacksmith)
-- critter-quest-guides/building-upgrade-costs#Mystic Mirror (Oracle)
-- critter-quest-guides/building-upgrade-costs#Bubbling Barrel (Alchemist)
-- critter-quest-guides/building-upgrade-costs#Gleaming Nest (Jeweler)
-- critter-quest-guides/building-upgrade-costs#Glowing COG (Ancient Tech Lab)
-- critter-quest-guides/fees-and-taxes
-- critter-quest-guides/tiles-and-land
-- critter-quest-guides/gems-and-socketing
-- critter-quest-guides/clone-minting
-- brand-kit
-- glossary
 
