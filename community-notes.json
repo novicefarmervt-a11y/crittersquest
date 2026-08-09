@@ -1,0 +1,43 @@
+[
+  {
+    "page": "Community Note",
+    "title": "Town stars - what they appear to be (UNCONFIRMED)",
+    "tags": [
+      "town stars",
+      "all its stars",
+      "5 stars town",
+      "star meter",
+      "town star meaning",
+      "ripeness",
+      "maturity",
+      "loot ripeness"
+    ],
+    "body": "**Status: community observation, not documented.** The official docs never connect the word \"stars\" to towns - every star reference in the documentation is about the Critter promotion system (0.2 increments up to 5.0, earned by consuming clones).\n\nPlayers report a star meter on their **town** that fills as critters gather and return, reaching 5/5.\n\nThe leading theory is that this displays **town maturity**, also called loot-ripeness, which IS documented on the Raiding & PvP page. Maturity scales how much a successful raider steals from your Town Bank - a wipe win takes up to 30%, an HP win up to 15%, and maturity determines where in that range you land. The docs state a freshly raided town has little ripe loot and regenerates ripeness over about a day.\n\n**If this theory is right, 5/5 stars is a warning rather than an achievement** - it means your town is at maximum lootability. The counterplay would be shielding, withdrawing to your wallet, or spending the bank down before going offline.\n\n**How to confirm:** watch whether the stars drop after you are raided or after you spend your Town Bank down. If they track your bank balance and reset after a hit, it is maturity. If they do not move, it is something else. Please report findings in Discord."
+  },
+  {
+    "page": "Community Note",
+    "title": "Gacha spins are earned, not a daily free allowance",
+    "tags": [
+      "daily spin",
+      "free spin",
+      "how do i spin",
+      "spin cadence",
+      "blue wheel free",
+      "earn spins"
+    ],
+    "body": "A common misreading. The Gacha Wheels page says the Blue Wheel is **free**, which means **spinning costs no $QUEST** - it does NOT mean you receive free spins on a daily timer.\n\nPer the Events System page, spins are **earned through participation in Beta tasks, quests, or staking progress**. You can spin one at a time or in bulk up to 25, and a counter shows how many you have remaining. Both wheels live in the **Events area**.\n\nThere is no documented daily free spin. Plan voucher income around how many spins you can actually earn, not around a daily faucet."
+  },
+  {
+    "page": "Community Note",
+    "title": "Item market snapshot, 9 Aug 2026",
+    "tags": [
+      "item market",
+      "marketplace prices",
+      "voucher price",
+      "clone floor",
+      "item floor",
+      "what sells"
+    ],
+    "body": "**Dated snapshot - verify before trading.** Taken from the in-game marketplace on 9 Aug 2026, two days after mainnet launch.\n\n| Metric | Value |\n| --- | --- |\n| Master floor | 5.03 SOL |\n| Clone floor | none listed |\n| Item floor | 0.030 SOL |\n| Items listed | 596 |\n| $QUEST price | $0.07777 |\n\nComposition of the 596 item listings: **567 vouchers, 29 tools, 0 equipment, 0 shards**.\n\nTwo things worth knowing. There was **no clone market at all** - zero clones listed anywhere, so there is no observed clearing price for clone mints yet. And **no equipment had ever been listed**, so crafted gear had no demonstrated buyer at this point.\n\nVouchers cleared at 0.03-0.05 SOL for 5-12 units of basic resources, and sellers were pricing **per voucher rather than per unit** - an 8-unit Herbs voucher at 0.03 sat alongside a 5-unit at 0.05."
+  }
+]
