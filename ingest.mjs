@@ -51,18 +51,17 @@ async function getPageList() {
  * ------------------------------------------------------------------ */
 
 function htmlTableToMarkdown(html) {
+  const scrub = (s) =>
+    s.replace(/<[^>]+>/g, " ")
+     .replace(/&#x20;|&nbsp;/gi, " ")
+     // GitBook internal blob and page refs are meaningless outside the site
+     .replace(/\/(?:files|pages)\/[A-Za-z0-9_#.-]+/g, "")
+     .replace(/\|/g, "\\|")
+     .replace(/\s+/g, " ")
+     .trim();
+
   const rows = [...html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)]
-    .map((tr) =>
-      [...tr[1].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((cell) =>
-        cell[1]
-          .replace(/<[^>]+>/g, " ")
-          .replace(/&#x20;/gi, " ")
-          .replace(/&nbsp;/gi, " ")
-          .replace(/\|/g, "\\|")
-          .replace(/\s+/g, " ")
-          .trim()
-      )
-    )
+    .map((tr) => [...tr[1].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((c) => scrub(c[1])))
     .filter((r) => r.length);
 
   if (!rows.length) return "";
@@ -71,34 +70,28 @@ function htmlTableToMarkdown(html) {
   const pad = (r) => { const c = [...r]; while (c.length < width) c.push(""); return c; };
 
   let head = pad(rows[0]);
+  let body = rows.slice(1).map(pad);
+
+  // Drop columns that are pure decoration (GitBook card covers) or entirely
+  // empty after scrubbing - they otherwise render as a column of blank cells.
+  const keep = [];
+  for (let i = 0; i < width; i++) {
+    const isCover = /cover image|^image$/i.test(head[i] || "");
+    const hasData = body.some((r) => r[i]);
+    if (!isCover && (hasData || head[i])) keep.push(i);
+  }
+  if (!keep.length) return "";
+
+  head = keep.map((i) => head[i]);
+  body = body.map((r) => keep.map((i) => r[i]));
+
   if (head.every((c) => !c)) head = head.map((_, i) => "Column " + (i + 1));
 
   return [
     "| " + head.join(" | ") + " |",
     "| " + head.map(() => "---").join(" | ") + " |",
-    ...rows.slice(1).map((r) => "| " + pad(r).join(" | ") + " |"),
+    ...body.map((r) => "| " + r.join(" | ") + " |"),
   ].join("\n");
-}
-
-function clean(md) {
-  return md
-    .replace(/^>\s*For the complete documentation index[\s\S]*?\n\n/, "")
-    .replace(
-      /<details>\s*<summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/gi,
-      (_, s, b) => "\n### " + s.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() + "\n" + b.trim() + "\n"
-    )
-    .replace(/<table[\s\S]*?<\/table>/gi, (m) => "\n" + htmlTableToMarkdown(m) + "\n")
-    .replace(/<figure>[\s\S]*?<\/figure>/gi, "")
-    .replace(/\{%[\s\S]*?%\}/g, "")
-    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
-    .replace(/\[([^\]]*)\]\(\/files\/[^)]*\)/g, "$1")
-    .replace(/<\/?br\s*\/?>/gi, "\n")
-    .replace(/&#x20;/gi, " ")
-    .replace(/&#xNAN;/gi, "")
-    .replace(/<[^>]+>/g, "")
-    .replace(/[ \t]+$/gm, "")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim();
 }
 
 function chunk(page, md) {
