@@ -72,8 +72,8 @@ function htmlTableToMarkdown(html) {
   let head = pad(rows[0]);
   let body = rows.slice(1).map(pad);
 
-  // Drop columns that are pure decoration (GitBook card covers) or entirely
-  // empty after scrubbing - they otherwise render as a column of blank cells.
+  // Drop decorative columns (GitBook card covers) and any column that is
+  // entirely empty after scrubbing - otherwise they render as blank cells.
   const keep = [];
   for (let i = 0; i < width; i++) {
     const isCover = /cover image|^image$/i.test(head[i] || "");
@@ -84,7 +84,6 @@ function htmlTableToMarkdown(html) {
 
   head = keep.map((i) => head[i]);
   body = body.map((r) => keep.map((i) => r[i]));
-
   if (head.every((c) => !c)) head = head.map((_, i) => "Column " + (i + 1));
 
   return [
@@ -92,6 +91,27 @@ function htmlTableToMarkdown(html) {
     "| " + head.map(() => "---").join(" | ") + " |",
     ...body.map((r) => "| " + r.join(" | ") + " |"),
   ].join("\n");
+}
+
+function clean(md) {
+  return md
+    .replace(/^>\s*For the complete documentation index[\s\S]*?\n\n/, "")
+    .replace(
+      /<details>\s*<summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/gi,
+      (_, s, b) => "\n### " + s.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() + "\n" + b.trim() + "\n"
+    )
+    .replace(/<table[\s\S]*?<\/table>/gi, (m) => "\n" + htmlTableToMarkdown(m) + "\n")
+    .replace(/<figure>[\s\S]*?<\/figure>/gi, "")
+    .replace(/\{%[\s\S]*?%\}/g, "")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]*)\]\(\/files\/[^)]*\)/g, "$1")
+    .replace(/<\/?br\s*\/?>/gi, "\n")
+    .replace(/&#x20;/gi, " ")
+    .replace(/&#xNAN;/gi, "")
+    .replace(/<[^>]+>/g, "")
+    .replace(/[ \t]+$/gm, "")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 }
 
 function chunk(page, md) {
