@@ -1,8 +1,8 @@
 {
   "source": "https://critters-quest-1.gitbook.io/critters-quest-docs/",
-  "fetchedAt": "2026-08-09T20:50:17.255Z",
-  "pageCount": 67,
-  "chunkCount": 101,
+  "fetchedAt": "2026-08-09T23:44:14.810Z",
+  "pageCount": 69,
+  "chunkCount": 118,
   "docs": [
     {
       "page": "About",
@@ -122,6 +122,32 @@
       ],
       "body": "# Populate Town\n\nPopulate your town with a critter, after placing your town on the world map you can populate the rest of your critters into your town to take full advantage of resource gathering.\n\n[Town Population Managemnt Guide](/critters-quest-docs/critter-quest-guides/town-population-management.md)\n\nThis critter will pay for your plot placement with locked $QUEST.  You can swap Critters at any time",
       "hash": "38d710244fcc"
+    },
+    {
+      "page": "Clone & Mint Editions",
+      "title": "Clone & Mint Editions",
+      "heading": null,
+      "url": "https://critters-quest-1.gitbook.io/critters-quest-docs/how-to-play/clone-and-mint-editions",
+      "blurb": "",
+      "tags": [
+        "clone mint editions",
+        "clone",
+        "mint",
+        "editions",
+        "master editions",
+        "15 clones",
+        "mint price in sol",
+        "bonding curve",
+        "5% royalty",
+        "image needed",
+        "column 1",
+        "gather",
+        "forge",
+        "build",
+        "$quest"
+      ],
+      "body": "# Clone & Mint Editions\n\n**Master Editions** can mint clones of themselves for other players to buy and play. As the owner you control the supply, price, and how much bound $QUEST each clone carries. This page covers the economics; see the Clones collectible page for what a clone is.\n\n| Column 1 |\n| --- |\n| Gather |\n| Forge |\n| Build |\n\n**Master Editions** can mint clones of themselves for other players to buy and play. As the owner you control the supply, price, and how much bound $QUEST each clone carries. This page covers the economics; see the Clones collectible page for what a clone is.\n\n### Setting up a mint\n\n* A Master Edition can have up to **15 clones** in circulation at once.\n* You set the **mint price in SOL** and the supply. The price is yours to choose; there is no fixed table.\n* You choose how bound $QUEST is allocated to clones, either a fixed amount per clone or a **bonding curve** where earlier mints receive more $QUEST than later ones.\n* You can set a launch date (24-hour minimum delay) and an optional end date.\n\n### What you earn\n\n* Each clone sale pays you in SOL, split between you and the collector based on your configured boost.\n* You earn a **5% royalty** on secondary sales of your clones.\n* Manage active mints and claim earnings from the Clone Dashboard.\n\nAllocating $QUEST to your clones makes them more useful to buyers, since players need $QUEST in a clone to level and promote it.\n\n📷 **Image needed**: mint configuration screen (supply, price, $QUEST allocation).\n\n### Related\n\n* [Buy $QUEST](/critters-quest-docs/how-to-play/buy-usdquest.md) — $QUEST allocated to clones\n* [Marketplace](/critters-quest-docs/how-to-play/marketplace.md) — listing and selling clones\n* [Fees & Taxes](/critters-quest-docs/critter-quest-guides/fees-and-taxes.md) — royalties and fees on sales",
+      "hash": "036bd5a8f216"
     },
     {
       "page": "Mine Items",
@@ -748,7 +774,6 @@
         "24 hours",
         "how the rolling charges work",
         "stacking",
-        "image needed",
         "1 hour",
         "15 minutes",
         "war fever",
@@ -766,8 +791,8 @@
         "undefended grace",
         "titan's shield potion"
       ],
-      "body": "# Town Shields & Raid Protection\n\nYour town can be raided by other players, and shields keep it safe. This page covers every way a town becomes protected: the free shield you start with, the Quick Shield you can buy, and the automatic shields you earn after a fight. It also covers the War Fever rule that stops attackers from hiding behind a shield.\n\n### The Newcomer Shield (Free)\n\nWhen you place your town for the first time, it is automatically protected for **72 hours**. There is no cost and nothing to click. It applies the moment your town is created.\n\n* It applies once, on first placement only.\n* Moving or re-placing a town later does not grant a new free shield.\n* Use this window to build your walls, bank your $QUEST, and set a defense squad before you become raidable.\n\n### Quick Shield (Buy)\n\nBuy a Quick Shield from the Shield tab for protection on demand. It activates instantly, with no arming delay.\n\n| Detail           | Value                                              |\n| ---------------- | -------------------------------------------------- |\n| Cost             | **100 $QUEST** per charge                          |\n| Duration         | **4 hours** per charge                             |\n| Charges          | **2 rolling charges**                              |\n| Charge refresh   | Each charge frees up **24 hours after you use it** |\n| Maximum coverage | Shielded up to **24 hours** ahead at once          |\n| Paid from        | Town Bank $QUEST or your connected wallet          |\n\n**How the rolling charges work.** You have two charges. Each one recharges on its own 24-hour timer from the moment you spend it, not on a fixed daily reset. You can shield now, shield again a few hours later, and your first charge becomes available again 24 hours after that first purchase.\n\n**Stacking.** Buying a Quick Shield extends your current shield rather than replacing it, but it can never push protection more than 24 hours into the future. If a purchase would not extend your shield, the game stops you so you do not waste a charge.\n\nQuick Shield can be paid from your Town Bank or connected wallet, but not from a critter's locked $QUEST. Town protection is a town-level cost.\n\n📷 **Image needed**: Shield tab showing the Quick Shield card (4h / 100 QUEST / 2 charges) with a live countdown.\n\n### Automatic Shields (Earned)\n\nSome shields are applied for you after a raid resolves, so you always get a moment to recover.\n\n| Shield                  | Duration       | When it triggers                                             |\n| ----------------------- | -------------- | ------------------------------------------------------------ |\n| Post-raid shield        | **1 hour**     | Your town was raided, so you get an hour of safety afterward |\n| Undefended grace        | **15 minutes** | Your town was taken in a walkover with no defenders set      |\n| Titan's Shield (potion) | **24 hours**   | You brew and drink a Titan's Shield (see the Potions page)   |\n\n### War Fever\n\nAttacking another town starts a **War Fever** timer on your own town. While War Fever is active you cannot raise a shield, whether a Quick Shield or a Titan's Shield. This closes the tactic of raiding someone and then immediately turtling up.\n\n* Each attack you launch adds **10 minutes** of War Fever.\n* War Fever is capped at **30 minutes** from the present moment.\n* Launching an attack also immediately drops your own active shield if you had one. You cannot attack from behind a wall.\n\nIf you go on the offensive, you are exposed for up to half an hour after your last attack. Plan your raids for when you can afford to be counter-attacked.\n\nIf you try to shield during War Fever, the game blocks it with a \"war timer active\" message. Wait for the timer to run down (up to 30 minutes) before shielding.",
-      "hash": "55b1b2239ce3"
+      "body": "# Town Shields & Raid Protection\n\nYour town can be raided by other players, and shields keep it safe. This page covers every way a town becomes protected: the free shield you start with, the Quick Shield you can buy, and the automatic shields you earn after a fight. It also covers the War Fever rule that stops attackers from hiding behind a shield.\n\n### The Newcomer Shield (Free)\n\nWhen you place your town for the first time, it is automatically protected for **72 hours**. There is no cost and nothing to click. It applies the moment your town is created.\n\n* It applies once, on first placement only.\n* Moving or re-placing a town later does not grant a new free shield.\n* Use this window to build your walls, bank your $QUEST, and set a defense squad before you become raidable.\n\n### Quick Shield (Buy)\n\nBuy a Quick Shield from the Shield tab for protection on demand. It activates instantly, with no arming delay.\n\n| Detail           | Value                                              |\n| ---------------- | -------------------------------------------------- |\n| Cost             | **100 $QUEST** per charge                          |\n| Duration         | **4 hours** per charge                             |\n| Charges          | **2 rolling charges**                              |\n| Charge refresh   | Each charge frees up **24 hours after you use it** |\n| Maximum coverage | Shielded up to **24 hours** ahead at once          |\n| Paid from        | Town Bank $QUEST or your connected wallet          |\n\n**How the rolling charges work.** You have two charges. Each one recharges on its own 24-hour timer from the moment you spend it, not on a fixed daily reset. You can shield now, shield again a few hours later, and your first charge becomes available again 24 hours after that first purchase.\n\n**Stacking.** Buying a Quick Shield extends your current shield rather than replacing it, but it can never push protection more than 24 hours into the future. If a purchase would not extend your shield, the game stops you so you do not waste a charge.\n\nQuick Shield can be paid from your Town Bank or connected wallet, but not from a critter's locked $QUEST. Town protection is a town-level cost.\n\n### Automatic Shields (Earned)\n\nSome shields are applied for you after a raid resolves, so you always get a moment to recover.\n\n| Shield                  | Duration       | When it triggers                                             |\n| ----------------------- | -------------- | ------------------------------------------------------------ |\n| Post-raid shield        | **1 hour**     | Your town was raided, so you get an hour of safety afterward |\n| Undefended grace        | **15 minutes** | Your town was taken in a walkover with no defenders set      |\n| Titan's Shield (potion) | **24 hours**   | You brew and drink a Titan's Shield (see the Potions page)   |\n\n### War Fever\n\nAttacking another town starts a **War Fever** timer on your own town. While War Fever is active you cannot raise a shield, whether a Quick Shield or a Titan's Shield. This closes the tactic of raiding someone and then immediately turtling up.\n\n* Each attack you launch adds **10 minutes** of War Fever.\n* War Fever is capped at **30 minutes** from the present moment.\n* Launching an attack also immediately drops your own active shield if you had one. You cannot attack from behind a wall.\n\nIf you go on the offensive, you are exposed for up to half an hour after your last attack. Plan your raids for when you can afford to be counter-attacked.\n\nIf you try to shield during War Fever, the game blocks it with a \"war timer active\" message. Wait for the timer to run down (up to 30 minutes) before shielding.",
+      "hash": "b5f90e6c22d2"
     },
     {
       "page": "Town Shields & Raid Protection",
@@ -979,6 +1004,25 @@
       ],
       "body": "# Visiting Towns & Brawls\n\nYou are not limited to your own town. You can walk into other players' towns to raid their beach chests, browse their graveyards, and mix it up with other visitors in real time.\n\n### Visiting\n\n* Click another player's town on the world map to enter it. Up to **15 visitors** can be in a town at once (the owner is always allowed in).\n* You see other visitors move around live, and a visiting banner shows which town you are in.\n* Some actions are gated: cracking beach chests needs both towns at level 5, and attacks respect cooldowns and shields.\n\n### Town brawls\n\nWhile visiting, you can throw playful swings at other players in the town. Brawls are **cosmetic only**, with no on-chain stakes: swing, land hits, and knock others back for fun. A knockout simply sends the loser back to the world map. Press the swing key to attack (it is suppressed while you are typing in chat).\n\n📷 **Image needed**: visiting another town with the visiting banner and other players present.\n\n### Related\n\n* [Beach Chests & Lost Items](/critters-quest-docs/how-to-play/beach-chests-and-lost-items.md) — cracking beach chests while visiting\n* [Town Shields & Raid Protection](/critters-quest-docs/how-to-play/town-shields-and-raid-protection.md) — why some attacks are blocked\n* [Building Upgrade Costs](/critters-quest-docs/critter-quest-guides/building-upgrade-costs.md) — both towns need level 5 to crack chests",
       "hash": "85c9cf9fdb3d"
+    },
+    {
+      "page": "Cloned Editions",
+      "title": "Cloned Editions",
+      "heading": null,
+      "url": "https://critters-quest-1.gitbook.io/critters-quest-docs/cloned-editions",
+      "blurb": "",
+      "tags": [
+        "cloned editions",
+        "cloned",
+        "editions",
+        "the gathering",
+        "column 1",
+        "gather",
+        "forge",
+        "build"
+      ],
+      "body": "# Cloned Editions\n\n**The Gathering** is where Critters step into Valdara to gather, forge, and build. [Master Editions](/critters-quest-docs/glossary.md#master-edition-critters) compete in timed races to gather resources, craft tools, and expand their towns in preparation for the battle ahead!\n\n| Column 1 |\n| --- |\n| Gather |\n| Forge |\n| Build |",
+      "hash": "63800d972f1f"
     },
     {
       "page": "Critter Quest Guides",
@@ -2361,6 +2405,7 @@
         "clone minting",
         "clone",
         "minting",
+        "master editions",
         "15 clones",
         "mint price in sol",
         "bonding curve",
@@ -2368,8 +2413,8 @@
         "image needed",
         "$quest"
       ],
-      "body": "# Clone Minting\n\nMaster Editions can mint clones of themselves for other players to buy and play. As the owner you control the supply, price, and how much bound $QUEST each clone carries. This page covers the economics; see the Clones collectible page for what a clone is.\n\n### Setting up a mint\n\n* A Master Edition can have up to **15 clones** in circulation at once.\n* You set the **mint price in SOL** and the supply. The price is yours to choose; there is no fixed table.\n* You choose how bound $QUEST is allocated to clones, either a fixed amount per clone or a **bonding curve** where earlier mints receive more $QUEST than later ones.\n* You can set a launch date (24-hour minimum delay) and an optional end date.\n\n### What you earn\n\n* Each clone sale pays you in SOL, split between you and the collector based on your configured boost.\n* You earn a **5% royalty** on secondary sales of your clones.\n* Manage active mints and claim earnings from the Clone Dashboard.\n\nAllocating $QUEST to your clones makes them more useful to buyers, since players need $QUEST in a clone to level and promote it.\n\n📷 **Image needed**: mint configuration screen (supply, price, $QUEST allocation).\n\n### Related\n\n* [Buy $QUEST](/critters-quest-docs/how-to-play/buy-usdquest.md) — $QUEST allocated to clones\n* [Marketplace](/critters-quest-docs/how-to-play/marketplace.md) — listing and selling clones\n* [Fees & Taxes](/critters-quest-docs/critter-quest-guides/fees-and-taxes.md) — royalties and fees on sales",
-      "hash": "6a7d8d287bfe"
+      "body": "# Clone Minting\n\n**Master Editions** can mint clones of themselves for other players to buy and play. As the owner you control the supply, price, and how much bound $QUEST each clone carries. This page covers the economics; see the Clones collectible page for what a clone is.\n\n### Setting up a mint\n\n* A Master Edition can have up to **15 clones** in circulation at once.\n* You set the **mint price in SOL** and the supply. The price is yours to choose; there is no fixed table.\n* You choose how bound $QUEST is allocated to clones, either a fixed amount per clone or a **bonding curve** where earlier mints receive more $QUEST than later ones.\n* You can set a launch date (24-hour minimum delay) and an optional end date.\n\n### What you earn\n\n* Each clone sale pays you in SOL, split between you and the collector based on your configured boost.\n* You earn a **5% royalty** on secondary sales of your clones.\n* Manage active mints and claim earnings from the Clone Dashboard.\n\nAllocating $QUEST to your clones makes them more useful to buyers, since players need $QUEST in a clone to level and promote it.\n\n📷 **Image needed**: mint configuration screen (supply, price, $QUEST allocation).\n\n### Related\n\n* [Buy $QUEST](/critters-quest-docs/how-to-play/buy-usdquest.md) — $QUEST allocated to clones\n* [Marketplace](/critters-quest-docs/how-to-play/marketplace.md) — listing and selling clones\n* [Fees & Taxes](/critters-quest-docs/critter-quest-guides/fees-and-taxes.md) — royalties and fees on sales",
+      "hash": "f8baab1c0a6c"
     },
     {
       "page": "Brand Kit",
@@ -2583,6 +2628,322 @@
       ],
       "body": "### Town Durability &#x26; Repair\nTown and walls share a maximum durability pool that grows as you upgrade them. Raids and wear reduce it, and a town stays fully operational at or above 15%. Repair costs 0.025 $QUEST plus materials per point, with more material types required as your level rises. Full Repair fixes everything; Partial Repair fixes a chosen number of points.\n\n### War Fever\nAttacking another town puts your own into a War Fever state during which you cannot raise any shield. This stops raiders from attacking and then hiding. Each attack adds 10 minutes (capped at 30), and attacking also immediately drops your own active shield.",
       "hash": "0a68c571b7ef"
+    },
+    {
+      "page": "Official FAQ",
+      "title": "What is a Master Edition NFT?",
+      "heading": "What is a Master Edition NFT?",
+      "url": "https://critters.quest/faqs",
+      "blurb": "",
+      "tags": [
+        "official faq",
+        "what is a master edition nft",
+        "official",
+        "faq",
+        "master",
+        "edition",
+        "nft"
+      ],
+      "body": "What is a Master Edition NFT?\n A Master Edition NFT is a special, limited-edition NFT that grants its owner control over the creation and minting of up to 15 Clone NFTs. In the Critters universe, Master Edition holders enjoy exclusive rights such as setting mint prices, earning royalties from Clone sales and trades, and accessing locked $QUEST tokens.",
+      "hash": "1fbcf8272ea7"
+    },
+    {
+      "page": "Official FAQ",
+      "title": "How many Master Edition NFTs are there?",
+      "heading": "How many Master Edition NFTs are there?",
+      "url": "https://critters.quest/faqs",
+      "blurb": "",
+      "tags": [
+        "official faq",
+        "how many master edition nfts are there",
+        "official",
+        "faq",
+        "many",
+        "master",
+        "edition",
+        "nfts"
+      ],
+      "body": "How many Master Edition NFTs are there?\n There are 3,500 Master Edition NFTs total. Master Edition minting has ended forever. The community voted to burn 2.1 billion leftover tokens from the mint, ensuring no additional Master Editions will ever be created. Each Master Edition allows the holder to mint up to 15 Clone NFTs, making the potential total number of NFTs 56,000 (including both Master Editions and Clones).",
+      "hash": "8a40b0373540"
+    },
+    {
+      "page": "Official FAQ",
+      "title": "What's the difference between OG and Standard Master Editions?",
+      "heading": "What's the difference between OG and Standard Master Editions?",
+      "url": "https://critters.quest/faqs",
+      "blurb": "",
+      "tags": [
+        "official faq",
+        "official",
+        "faq",
+        "what's",
+        "difference",
+        "between",
+        "standard",
+        "master",
+        "editions",
+        "2 5 sol"
+      ],
+      "body": "What's the difference between OG and Standard Master Editions?\n OG Master Editions (#1-2500): Have access to free multiplier spins if not already claimed during the original mint\n Standard Master Editions (#2501-3500): Do not have multiplier access, but are eligible for a potential 2.5 SOL refund if certain conditions are met in the future",
+      "hash": "4b92eea840cb"
+    },
+    {
+      "page": "Official FAQ",
+      "title": "How do I control Clone minting?",
+      "heading": "How do I control Clone minting?",
+      "url": "https://critters.quest/faqs",
+      "blurb": "",
+      "tags": [
+        "official faq",
+        "how do i control clone minting",
+        "official",
+        "faq",
+        "control",
+        "clone",
+        "minting"
+      ],
+      "body": "How do I control Clone minting?\n As a Master Edition owner, you don't mint Clone NFTs yourself. Instead, you control the public minting process by deciding how many Clone NFTs to release from your Master Edition, within the limit of 15 per Master Edition. This minting process is handled on a dedicated Clone Mint Page, where other users can mint from your Master Edition.",
+      "hash": "0ab9798c3dd6"
+    },
+    {
+      "page": "Official FAQ",
+      "title": "Can Clones be lost or burned?",
+      "heading": "Can Clones be lost or burned?",
+      "url": "https://critters.quest/faqs",
+      "blurb": "",
+      "tags": [
+        "official faq",
+        "can clones be lost or burned",
+        "official",
+        "faq",
+        "clones",
+        "lost",
+        "burned"
+      ],
+      "body": "Can Clones be lost or burned?\n Yes, Clone NFTs can be lost or burned during gameplay, which permanently reduces the total supply. If a Clone NFT is burned, its specific edition number is permanently lost. However, you can reopen the mint for that slot, allowing a new Clone to be minted—assuming your Master Edition has more mints available.",
+      "hash": "2b2ab08d8c1e"
+    },
+    {
+      "page": "Official FAQ",
+      "title": "What royalties do I earn?",
+      "heading": "What royalties do I earn?",
+      "url": "https://critters.quest/faqs",
+      "blurb": "",
+      "tags": [
+        "official faq",
+        "what royalties do i earn",
+        "official",
+        "faq",
+        "royalties",
+        "earn"
+      ],
+      "body": "What royalties do I earn?\n As a Master Edition owner, you automatically receive royalties from Clone NFTs minted from your Master Edition. Additionally, you earn royalties from secondary market sales of Clone NFTs. The base royalty is 50%, which can be boosted up to 75% with multipliers. Each Master Edition has a connected wallet that receives these payments directly.",
+      "hash": "93b33a0e07ea"
+    },
+    {
+      "page": "Official FAQ",
+      "title": "What happens to burned Clone NFTs?",
+      "heading": "What happens to burned Clone NFTs?",
+      "url": "https://critters.quest/faqs",
+      "blurb": "",
+      "tags": [
+        "official faq",
+        "what happens to burned clone nfts",
+        "official",
+        "faq",
+        "happens",
+        "burned",
+        "clone",
+        "nfts"
+      ],
+      "body": "What happens to burned Clone NFTs?\n Once a Clone NFT is burned, the edition number is permanently lost, and a new NFT minted from the same Master Edition will not carry the same number. This makes low-number Clones highly collectible and adds value to early mints. While the overall supply may shrink due to burning, Master Edition holders have the power to reopen their mints to issue new NFTs, as long as their Master Edition still has remaining mints.",
+      "hash": "3f7479f256f5"
+    },
+    {
+      "page": "Official FAQ",
+      "title": "Can Master Edition NFTs be burned?",
+      "heading": "Can Master Edition NFTs be burned?",
+      "url": "https://critters.quest/faqs",
+      "blurb": "",
+      "tags": [
+        "official faq",
+        "can master edition nfts be burned",
+        "official",
+        "faq",
+        "master",
+        "edition",
+        "nfts",
+        "burned"
+      ],
+      "body": "Can Master Edition NFTs be burned?\n No, Master Edition NFTs cannot be burned or lost. They remain a permanent part of the Critters universe, ensuring that Master Edition holders always have control over Edition mints and remain key players in the NFT ecosystem.",
+      "hash": "76e0ad6a94f9"
+    },
+    {
+      "page": "Official FAQ",
+      "title": "Can I rename my Master Edition NFT?",
+      "heading": "Can I rename my Master Edition NFT?",
+      "url": "https://critters.quest/faqs",
+      "blurb": "",
+      "tags": [
+        "official faq",
+        "can i rename my master edition nft",
+        "official",
+        "faq",
+        "rename",
+        "master",
+        "edition",
+        "nft"
+      ],
+      "body": "Can I rename my Master Edition NFT?\n Yes, you can rename your Master Edition NFT using $QUEST tokens. This renaming feature also changes the names of all the Clone NFTs derived from it. Future owners of the Master Edition can rename it as well.",
+      "hash": "40d0728fa29c"
+    },
+    {
+      "page": "Official FAQ",
+      "title": "Can I sell my Master Edition NFT?",
+      "heading": "Can I sell my Master Edition NFT?",
+      "url": "https://critters.quest/faqs",
+      "blurb": "",
+      "tags": [
+        "official faq",
+        "can i sell my master edition nft",
+        "official",
+        "faq",
+        "sell",
+        "master",
+        "edition",
+        "nft"
+      ],
+      "body": "Can I sell my Master Edition NFT?\n Yes, you can sell your Master Edition NFT on secondary markets. When sold, the buyer gains all the rights associated with that Master Edition, including the ability to mint any remaining Clone NFTs, claim royalties from future sales, and access to the locked $QUEST tokens.",
+      "hash": "5161670b2760"
+    },
+    {
+      "page": "Official FAQ",
+      "title": "What happens if I don’t use all my 15 Clone mints?",
+      "heading": "What happens if I don’t use all my 15 Clone mints?",
+      "url": "https://critters.quest/faqs",
+      "blurb": "",
+      "tags": [
+        "official faq",
+        "official",
+        "faq",
+        "happens",
+        "don",
+        "use",
+        "clone",
+        "mints"
+      ],
+      "body": "What happens if I don’t use all my 15 Clone mints?\n If you don't use all of your 15 Clone mints, the remaining mints are tied to your Master Edition. If you decide to sell your Master Edition before using all the mints, the new owner will inherit the remaining mints and can mint the rest of the Clone NFTs.",
+      "hash": "ba627027a84f"
+    },
+    {
+      "page": "Item Guide",
+      "title": "Item Guide",
+      "heading": null,
+      "url": "https://critters.quest/item-guide",
+      "blurb": "",
+      "tags": [
+        "item guide",
+        "guide"
+      ],
+      "body": "What it does, where to get it, what it costs, and - for gear - what it can actually roll.\nArmoury\n 225 entries\n Set Bonuses\n 9 entries\n Toolshed\n 21 entries\n Gemstones\n 21 entries\n Apothecary\n 25 entries\n Raw & Refined\n 72 entries\nEvery weapon, hat, shield, amulet and pair of boots.\nAll amulet boots hat shield weapon\n Any source Craftable Gacha Wheel\n Sort: Best CP Sort: Worst-case CP Sort: Gather Power Sort: Tier Sort: Craft cost Sort: Craft time Sort: Name 225 shown\nArmoury\nwheel skill\n All Seeing Eye Shield\n wheel Throne\n Lust of the King\n T7\n Gaia\n T8\n Hades Key\n T10\n Sauron\n wheel Lunar\n Lunar's Embrace\n wheel Nightmare\n Collector of Lost Dreams\n wheel skill\n Castle Door Shield\n wheel Blizzard\n The Ice Pinnacle\n wheel Justice\n Fang of the Glimmering Hydra\n wheel Ghost\n Claw of the Nether\n wheel Ember\n The Flame Amulet of Fire\n wheel skill\n Treasure from the Grave\n wheel Pixies\n The Neverending Promise\n T6\n Celestial Prism\n wheel skill\n The Beloved Guard\n wheel Blizzard\n Frozen Scales of Protection\n wheel Bio Hazard\n Hazard of the Drake\n wheel skill\n Brilliant Diamond Shield\n wheel skill\n Crown of the Devout\n wheel skill\n Planet Splitter\n wheel Throne\n The Royal Guard\n wheel skill\n Laser Shield\n T9\n Blood Cross\n wheel skill\n Heavy Boots\n wheel Bio Hazard\n Hazardous Wall\n wheel skill\n Power Shield\n wheel skill\n Blood Oath Cap\n wheel Ghost\n Protector of the Immortal\n wheel skill\n Reaper's Claw\n wheel skill\n Inferno Shield\n T3\n Crimson\n wheel Justice\n Radiant Will of Protection\n wheel skill\n Tundra Stompers\n T7\n Sunfire Ember\n wheel skill\n Haunted Captain Greybeard's Hat\n wheel Ember\n Guardian of Flame\n wheel skill\n Radiant Diamond Shield\n wheel Lunar\n Escape Guardian\n wheel Throne\n Boots of Royalty\n T4\n Cerulean Guardian\n T4\n Pink Mystic\n T4\n Ruby Roundel\n T5\n Aqua Veil\n wheel skill\n Golden Skull Cap\n wheel skill\n Lazer Axe\n wheel skill\n War Cap\n wheel Pixies\n Guardian of Harmony\n wheel skill\n Feather of the Phoenix\n wheel Throne\n Midas's Helm\n wheel skill\n Locket of the Sacred Heart\n wheel Ember\n Claws of the Drake\n wheel Ghost\n Boots of Silence\n wheel skill\n Warrior Blade\n wheel skill\n Twin Blade\n wheel skill\n Spirit of the Forest\n wheel skill\n Serpent's Fang\n wheel Nightmare\n Shadow's Steps\n wheel skill\n Shadow of the Moon\n wheel Justice\n Boots of the Empire\n wheel skill\n Captain Greybeard's Hat\n wheel skill\n Caster's Will\n wheel Blizzard\n Boots of the Glacier\n wheel skill\n Blade of the Holy Flames\n wheel skill\n Flame of the Ruby\n wheel skill\n Crown of the Fallen\n wheel Nightmare\n The Veil of Night\n wheel Lunar\n Infinity Explorer\n wheel skill\n Call of Power\n T7\n Storm\n wheel skill\n Sky Blade\n wheel Blizzard\n Horns of the Storm\n wheel skill\n Skull Cap\n T6\n Crimson Ember\n wheel Nightmare\n Gift from the Shadows\n wheel Pixies\n Enchanted Trotters\n wheel skill\n Power Boots\n T3\n Ivory Wall\n T3\n Sunset Warden\n T3\n Tidal Crest\n T5\n Earthquake\n T9\n Thing\n wheel skill\n Skull Axe\n wheel skill\n Golden Boots\n wheel skill\n King's Blessing\n wheel skill\n Shark Bite\n wheel skill\n War Hammer\n wheel Justice\n Helm of Might and Glory\n wheel Ghost\n Phantom's Guard\n wheel skill\n Jester Hat\n wheel Bio Hazard\n The Dreadful Boots\n wheel Ember\n Helm of Inferno\n wheel skill\n Alien Boots\n wheel skill\n Shadow Pendant\n T6\n Sailor\n T8\n Viking\n T2\n Ember\n T2\n Onyx\n wheel skill\n Dreadspire\n wheel skill\n Skull Spear\n T8\n Diamond\n T6\n Amethyst Prism\n T8\n Enchanters Gem\n wheel skill\n Heart of the Glacier\n wheel Bio Hazard\n Crown of Waste\n wheel skill\n Jester Feet\n wheel Lunar\n Horns of the Crescent Helm\n wheel skill\n Blood of the Beast\n wheel skill\n Fairy's Eye\n T5\n Gold Cross\n T7\n Tempest Ember\n wheel Pixies\n The Shimmering Cap\n T9\n Groot\n T2\n Grey Fedora\n T2\n Red Fedora\n T2\n White Fedora\n T2\n Yellow Fedora\n T4\n Azure\n T4\n Blood Iron\n T4\n Flamewatch\n T4\n Gold Aegis\n T4\n Ivory Crusader\n T5\n Royal\n T5\n Scarlet\n T5\n Verdant Guard\n wheel Nightmare\n Shadow's Touch\n wheel skill\n Genie's Wisdom\n wheel skill\n Venom Tears\n 1 of 1\n Forest Heart Crystal\n wheel Bio Hazard\n Toxic Blade\n wheel Ember\n Heroic Saber of Blaze\n wheel Throne\n Throne's Justice\n wheel Pixies\n Infinity Gleam\n wheel Lunar\n Lunar's Edge\n wheel Justice\n The Radiant\n T9\n Saberstaff\n T3\n Construction\n wheel Ghost\n Bringer of Silence\n T4\n Hammer\n T4\n Steel Scimitar\n wheel Blizzard\n Tundra's Scorn\n 1 of 1\n Mirror of Ages\n T3\n Closed Saber\n T4\n Blue Saber\n T4\n Green Saber\n T4\n Pink Saber\n T4\n Red Saber\n T4\n Throwing Knife\n T5\n Jade Axe\n T4\n Steel Short Sword\n 1 of 1\n Blood Moon Talisman\n 1 of 1\n Solar Core Pendant\n 1 of 1\n Stone Heart Talisman\n 1 of 1\n Arcane Chronograph\n T1\n Shadow Barrier\n T2\n Amethyst Valor\n T2\n Obsidian Defender\n T2\n Violet Champion\n 1 of 1\n Leaf Woven Crown\n 1 of 1\n Teardrop Crystal Pendant\n 1 of 1\n Mountain King's Helm\n wheel skill\n Key of the Underworld\n 1 of 1 skill\n Celestial Core\n 1 of 1\n Crown of the Eternal\n T1\n Blue Top Hat\n T1\n Green Top Hat\n T1\n Red Top Hat\n T1\n Yellow Top Hat\n T2\n Bitcoin Cap\n T2\n Fedora Feather\n T2\n Solana Cap\n T4\n Blue Octopus\n T4\n Purple Octopus\n T4\n Red Octopus\n T4\n Blue Queen Crown\n T4\n White Queen Crown\n T6\n Blue King Crown\n T6\n Golden King Crown\n 1 of 1\n Grove Walker Sandals\n 1 of 1\n Crown of Temporal Mastery\n T7\n Confusion\n 1 of 1 skill\n Earth Breaker\n T5\n Divine Sandals\n T5\n Golden Slippers\n T5\n Royal Slippers\n T5\n Torrent Sandals\n wheel skill\n Light of the Sun\n 1 of 1\n Crimson Star Hat\n wheel skill\n Key of the Kingdom\n T7\n Magic Wand\n T8\n Scythe\n T3\n Blue Wizard\n T3\n Orange Wizard\n T3\n Red Wizard\n T2\n White Wood Wand\n T3\n Orange Sorcerer Wand\n T3\n Purple Sorcerer Wand\n T3\n Red Sorcerer Wand\n 1 of 1 skill\n Origin Scythe\n 1 of 1\n Solar Flare Halo\n 1 of 1\n Timeless Walker's Greaves\n T1\n Oak Wood Wand\n T4\n Candle\n 1 of 1 skill\n Ember Staff\n 1 of 1\n Water Sage Helm\n 1 of 1\n Timeweaver's Steps\n T1\n Wooden Short Sword\n T1\n Wooden Long Sword\n T1\n Wooden Baseball Bat\n T2\n Stone Long Sword\n T2\n Stone Spear\n T2\n Cherry Wood Wand\n T2\n Aluminum Baseball Bat\n T2\n Steel Axe\n T4\n Ruby Spear\n 1 of 1\n Moonwalker Boots\n T2\n Stone Axe\n 1 of 1\n Sunwalker's Sandals\n 1 of 1 skill\n Aether Crystal\n 1 of 1\n Earthshaker Treads\n 1 of 1 skill\n Tidal Saber\n 1 of 1 skill\n Totem Of Life\n 1 of 1\n Aqua Warden Treads\n T7\n Goblin\n T1\n Oak",
+      "hash": "8478d372606f"
+    },
+    {
+      "page": "Community Note",
+      "title": "Town stars - what they appear to be (UNCONFIRMED)",
+      "heading": "Town stars - what they appear to be (UNCONFIRMED)",
+      "url": "https://critters.quest/",
+      "blurb": "",
+      "community": true,
+      "tags": [
+        "town stars",
+        "all its stars",
+        "5 stars town",
+        "star meter",
+        "town star meaning",
+        "ripeness",
+        "maturity",
+        "loot ripeness",
+        "community note",
+        "community",
+        "note",
+        "town",
+        "stars",
+        "they",
+        "appear",
+        "unconfirmed",
+        "town maturity",
+        "how to confirm"
+      ],
+      "body": "**Status: community observation, not documented.** The official docs never connect the word \"stars\" to towns - every star reference in the documentation is about the Critter promotion system (0.2 increments up to 5.0, earned by consuming clones).\n\nPlayers report a star meter on their **town** that fills as critters gather and return, reaching 5/5.\n\nThe leading theory is that this displays **town maturity**, also called loot-ripeness, which IS documented on the Raiding & PvP page. Maturity scales how much a successful raider steals from your Town Bank - a wipe win takes up to 30%, an HP win up to 15%, and maturity determines where in that range you land. The docs state a freshly raided town has little ripe loot and regenerates ripeness over about a day.\n\n**If this theory is right, 5/5 stars is a warning rather than an achievement** - it means your town is at maximum lootability. The counterplay would be shielding, withdrawing to your wallet, or spending the bank down before going offline.\n\n**How to confirm:** watch whether the stars drop after you are raided or after you spend your Town Bank down. If they track your bank balance and reset after a hit, it is maturity. If they do not move, it is something else. Please report findings in Discord.",
+      "hash": "d6e245f8c4e2"
+    },
+    {
+      "page": "Community Note",
+      "title": "Gacha spins are earned, not a daily free allowance",
+      "heading": "Gacha spins are earned, not a daily free allowance",
+      "url": "https://critters.quest/",
+      "blurb": "",
+      "community": true,
+      "tags": [
+        "daily spin",
+        "free spin",
+        "how do i spin",
+        "spin cadence",
+        "blue wheel free",
+        "earn spins",
+        "community note",
+        "community",
+        "note",
+        "gacha",
+        "spins",
+        "earned",
+        "daily",
+        "free",
+        "allowance",
+        "spinning costs no $quest",
+        "events area"
+      ],
+      "body": "A common misreading. The Gacha Wheels page says the Blue Wheel is **free**, which means **spinning costs no $QUEST** - it does NOT mean you receive free spins on a daily timer.\n\nPer the Events System page, spins are **earned through participation in Beta tasks, quests, or staking progress**. You can spin one at a time or in bulk up to 25, and a counter shows how many you have remaining. Both wheels live in the **Events area**.\n\nThere is no documented daily free spin. Plan voucher income around how many spins you can actually earn, not around a daily faucet.",
+      "hash": "cf6bd51e8496"
+    },
+    {
+      "page": "Community Note",
+      "title": "Item market snapshot, 9 Aug 2026",
+      "heading": "Item market snapshot, 9 Aug 2026",
+      "url": "https://critters.quest/",
+      "blurb": "",
+      "community": true,
+      "tags": [
+        "item market",
+        "marketplace prices",
+        "voucher price",
+        "clone floor",
+        "item floor",
+        "what sells",
+        "community note",
+        "item market snapshot 9 aug 2026",
+        "community",
+        "note",
+        "market",
+        "snapshot",
+        "aug",
+        "2026",
+        "dated snapshot - verify before trading",
+        "no clone market at all",
+        "no equipment had ever been listed",
+        "per voucher rather than per unit",
+        "metric",
+        "master floor",
+        "5 03 sol",
+        "none listed",
+        "0 030 sol",
+        "items listed",
+        "$quest price",
+        "0 05 sol"
+      ],
+      "body": "**Dated snapshot - verify before trading.** Taken from the in-game marketplace on 9 Aug 2026, two days after mainnet launch.\n\n| Metric | Value |\n| --- | --- |\n| Master floor | 5.03 SOL |\n| Clone floor | none listed |\n| Item floor | 0.030 SOL |\n| Items listed | 596 |\n| $QUEST price | $0.07777 |\n\nComposition of the 596 item listings: **567 vouchers, 29 tools, 0 equipment, 0 shards**.\n\nTwo things worth knowing. There was **no clone market at all** - zero clones listed anywhere, so there is no observed clearing price for clone mints yet. And **no equipment had ever been listed**, so crafted gear had no demonstrated buyer at this point.\n\nVouchers cleared at 0.03-0.05 SOL for 5-12 units of basic resources, and sellers were pricing **per voucher rather than per unit** - an 8-unit Herbs voucher at 0.03 sat alongside a 5-unit at 0.05.",
+      "hash": "7aaab4e036b9"
     }
   ]
 }
