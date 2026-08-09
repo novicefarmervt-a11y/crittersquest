@@ -1,0 +1,77 @@
+# Keeps the Critters Quest answer page current without you touching it.
+# Runs daily, re-reads the live docs, and commits only when something changed.
+# If your host auto-deploys on push, that commit IS the deploy.
+#
+# Setup: Settings -> Actions -> General -> Workflow permissions ->
+#        "Read and write permissions". That is the only switch you need.
+
+name: Refresh Critters Quest docs
+
+on:
+  schedule:
+    - cron: "0 11 * * *"     # 11:00 UTC daily - cron is always UTC
+  workflow_dispatch: {}       # adds a "Run workflow" button for manual runs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-docs
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # ingest.mjs writes nothing when the docs are unchanged, and exits 2 if
+      # the docs site was too broken to trust. Either way we never overwrite a
+      # good corpus with a bad one.
+      - name: Re-ingest docs
+        run: node ingest.mjs
+
+      - name: Commit if changed
+        id: commit
+        run: |
+          if [ -z "$(git status --porcelain corpus.js docs.json CHANGES.md)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes. Nothing to commit."
+            exit 0
+          fi
+          git config user.name  "docs-bot"
+          git config user.email "actions@github.com"
+          git add corpus.js docs.json CHANGES.md
+          git commit -m "docs: refresh Critters Quest corpus ($(date -u +%Y-%m-%d))"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Surfaces what changed on the Actions run page, so a game patch shows up
+      # as a readable diff instead of a silent commit.
+      - name: Summarise
+        if: steps.commit.outputs.changed == 'true'
+        run: cat CHANGES.md >> "$GITHUB_STEP_SUMMARY"
+
+      # ----------------------------------------------------------------
+      # OPTIONAL - only if your host does NOT auto-deploy on push.
+      # Uncomment, then add the secrets under
+      # Settings -> Secrets and variables -> Actions.
+      # ----------------------------------------------------------------
+      # - name: Upload over FTP
+      #   if: steps.commit.outputs.changed == 'true'
+      #   uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      #   with:
+      #     server:   ${{ secrets.FTP_HOST }}
+      #     username: ${{ secrets.FTP_USER }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     server-dir: /public_html/valdara/
+      #     exclude: |
+      #       **/.git*/**
+      #       **/node_modules/**
+      #       docs.json
+      #       ingest.mjs
