@@ -50,12 +50,6 @@ async function getPageList() {
  * 2. clean + chunk
  * ------------------------------------------------------------------ */
 
-/**
- * GitBook writes a lot of its richest tables as raw HTML rather than markdown
- * - the legendary gear stat blocks, for one. Left alone they reach the page as
- * literal <tr><td> soup. Convert them to markdown so the renderer and the LLM
- * both see clean rows.
- */
 function htmlTableToMarkdown(html) {
   const rows = [...html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)]
     .map((tr) =>
@@ -76,7 +70,6 @@ function htmlTableToMarkdown(html) {
   const width = Math.max(...rows.map((r) => r.length));
   const pad = (r) => { const c = [...r]; while (c.length < width) c.push(""); return c; };
 
-  // GitBook "card" tables ship an entirely empty header row.
   let head = pad(rows[0]);
   if (head.every((c) => !c)) head = head.map((_, i) => "Column " + (i + 1));
 
@@ -90,20 +83,14 @@ function htmlTableToMarkdown(html) {
 function clean(md) {
   return md
     .replace(/^>\s*For the complete documentation index[\s\S]*?\n\n/, "")
-    // <details><summary>Term</summary> body </details>  ->  ### Term + body
-    // The Glossary is built entirely out of these.
     .replace(
       /<details>\s*<summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/gi,
-      (_, summary, body) =>
-        "\n### " + summary.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() + "\n" + body.trim() + "\n"
+      (_, s, b) => "\n### " + s.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() + "\n" + b.trim() + "\n"
     )
     .replace(/<table[\s\S]*?<\/table>/gi, (m) => "\n" + htmlTableToMarkdown(m) + "\n")
     .replace(/<figure>[\s\S]*?<\/figure>/gi, "")
-    // any remaining GitBook block syntax, not just the tags we know about
     .replace(/\{%[\s\S]*?%\}/g, "")
     .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
-    .replace(/^.*📷\s*\*\*Image needed\*\*.*$/gmu, "")
-    // links to GitBook's internal file blobs carry no meaning outside the site
     .replace(/\[([^\]]*)\]\(\/files\/[^)]*\)/g, "$1")
     .replace(/<\/?br\s*\/?>/gi, "\n")
     .replace(/&#x20;/gi, " ")
