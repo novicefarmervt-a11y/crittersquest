@@ -50,13 +50,66 @@ async function getPageList() {
  * 2. clean + chunk
  * ------------------------------------------------------------------ */
 
+/**
+ * GitBook writes a lot of its richest tables as raw HTML rather than markdown
+ * - the legendary gear stat blocks, for one. Left alone they reach the page as
+ * literal <tr><td> soup. Convert them to markdown so the renderer and the LLM
+ * both see clean rows.
+ */
+function htmlTableToMarkdown(html) {
+  const rows = [...html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)]
+    .map((tr) =>
+      [...tr[1].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((cell) =>
+        cell[1]
+          .replace(/<[^>]+>/g, " ")
+          .replace(/&#x20;/gi, " ")
+          .replace(/&nbsp;/gi, " ")
+          .replace(/\|/g, "\\|")
+          .replace(/\s+/g, " ")
+          .trim()
+      )
+    )
+    .filter((r) => r.length);
+
+  if (!rows.length) return "";
+
+  const width = Math.max(...rows.map((r) => r.length));
+  const pad = (r) => { const c = [...r]; while (c.length < width) c.push(""); return c; };
+
+  // GitBook "card" tables ship an entirely empty header row.
+  let head = pad(rows[0]);
+  if (head.every((c) => !c)) head = head.map((_, i) => "Column " + (i + 1));
+
+  return [
+    "| " + head.join(" | ") + " |",
+    "| " + head.map(() => "---").join(" | ") + " |",
+    ...rows.slice(1).map((r) => "| " + pad(r).join(" | ") + " |"),
+  ].join("\n");
+}
+
 function clean(md) {
   return md
     .replace(/^>\s*For the complete documentation index[\s\S]*?\n\n/, "")
-    .replace(/\{%\s*(end)?(hint|columns|column|tabs|tab|content-ref)[^%]*%\}/g, "")
-    .replace(/<figure>[\s\S]*?<\/figure>/g, "")
+    // <details><summary>Term</summary> body </details>  ->  ### Term + body
+    // The Glossary is built entirely out of these.
+    .replace(
+      /<details>\s*<summary>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/gi,
+      (_, summary, body) =>
+        "\n### " + summary.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() + "\n" + body.trim() + "\n"
+    )
+    .replace(/<table[\s\S]*?<\/table>/gi, (m) => "\n" + htmlTableToMarkdown(m) + "\n")
+    .replace(/<figure>[\s\S]*?<\/figure>/gi, "")
+    // any remaining GitBook block syntax, not just the tags we know about
+    .replace(/\{%[\s\S]*?%\}/g, "")
     .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
-    .replace(/^.*📷\s*\*\*Image needed\*\*.*$/gm, "")
+    .replace(/^.*📷\s*\*\*Image needed\*\*.*$/gmu, "")
+    // links to GitBook's internal file blobs carry no meaning outside the site
+    .replace(/\[([^\]]*)\]\(\/files\/[^)]*\)/g, "$1")
+    .replace(/<\/?br\s*\/?>/gi, "\n")
+    .replace(/&#x20;/gi, " ")
+    .replace(/&#xNAN;/gi, "")
+    .replace(/<[^>]+>/g, "")
+    .replace(/[ \t]+$/gm, "")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
