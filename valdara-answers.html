@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valdara Answers — an unofficial Critters Quest guide</title>
+<style>
+  :root{
+    --bg:#0d0f1a; --bg2:#141829; --panel:#191e33; --panel2:#20263f;
+    --line:#2c3352; --text:#e8eaf6; --muted:#9aa3c7; --dim:#6e77a0;
+    --gold:#f2c14e; --gold2:#ffdd8a; --blue:#6ab7ff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:radial-gradient(1100px 600px at 50% -180px,#242b4d 0%,rgba(36,43,77,0) 70%),var(--bg);
+    color:var(--text);
+    font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    min-height:100vh;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:28px 18px 90px}
+
+  header{text-align:center;margin-bottom:22px}
+  .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
+  h1{
+    margin:0 0 6px;font-size:34px;line-height:1.15;letter-spacing:-.02em;
+    background:linear-gradient(180deg,#fff 0%,var(--gold2) 120%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .sub{color:var(--muted);font-size:14px;margin:0}
+
+  .disclaimer{
+    margin:18px 0 22px;padding:10px 14px;border-radius:9px;
+    background:rgba(242,193,78,.07);border:1px solid rgba(242,193,78,.28);
+    color:#e6cf9a;font-size:12.5px;line-height:1.5;text-align:center;
+  }
+  .disclaimer a{color:var(--gold2)}
+
+  .searchbox{position:relative}
+  #q{
+    width:100%;padding:16px 52px 16px 18px;font-size:16px;color:var(--text);
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    outline:none;transition:border-color .15s,box-shadow .15s;font-family:inherit;
+  }
+  #q::placeholder{color:var(--dim)}
+  #q:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(242,193,78,.13)}
+  .go{
+    position:absolute;right:8px;top:50%;transform:translateY(-50%);
+    background:var(--gold);color:#1a1408;border:0;border-radius:8px;
+    width:36px;height:36px;font-size:16px;cursor:pointer;font-weight:700;
+  }
+  .go:hover{background:var(--gold2)}
+
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;justify-content:center}
+  .chip{
+    background:var(--panel);border:1px solid var(--line);color:var(--muted);
+    padding:6px 12px;border-radius:999px;font-size:12.5px;cursor:pointer;
+    transition:.15s;font-family:inherit;
+  }
+  .chip:hover{border-color:var(--gold);color:var(--gold2);background:var(--panel2)}
+
+  #results{margin-top:26px}
+  .status{color:var(--dim);font-size:12.5px;margin-bottom:14px;text-align:center}
+  .status b{color:var(--muted)}
+
+  .card{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:18px 20px;margin-bottom:14px;overflow:hidden;
+  }
+  .card.top{border-color:rgba(242,193,78,.42);background:linear-gradient(180deg,#1d2238 0%,var(--panel) 60%)}
+  .card h2{margin:0 0 4px;font-size:17px;font-weight:650;letter-spacing:-.01em;color:#fff}
+  .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11px;color:var(--dim);margin-bottom:12px}
+  .badge{
+    background:rgba(242,193,78,.13);color:var(--gold);padding:2px 8px;border-radius:5px;
+    font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:9.5px;
+  }
+  .src{color:var(--dim);text-decoration:none;border-bottom:1px dotted var(--line)}
+  .src:hover{color:var(--blue);border-bottom-color:var(--blue)}
+
+  .body{font-size:14.2px;color:#d5daf0}
+  .body p{margin:0 0 10px}
+  .body p:last-child{margin-bottom:0}
+  .body strong{color:#fff;font-weight:650}
+  .body ul{margin:0 0 10px;padding-left:20px}
+  .body li{margin-bottom:5px}
+  .body code{background:var(--bg2);padding:1px 5px;border-radius:4px;font-size:12.5px;color:var(--gold2)}
+  .tablewrap{overflow-x:auto;margin:0 0 10px;-webkit-overflow-scrolling:touch}
+  table{border-collapse:collapse;width:100%;font-size:12.8px;min-width:340px}
+  th,td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--gold);font-weight:650;background:var(--bg2);font-size:11px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  td:first-child{color:#fff}
+
+  mark{background:rgba(242,193,78,.26);color:var(--gold2);border-radius:2px;padding:0 2px}
+
+  .empty{text-align:center;padding:44px 20px;color:var(--muted);background:var(--panel);border:1px dashed var(--line);border-radius:12px}
+  .empty h3{margin:0 0 8px;color:var(--text);font-size:16px}
+
+  footer{margin-top:46px;padding-top:22px;border-top:1px solid var(--line);text-align:center;color:var(--dim);font-size:12px;line-height:1.7}
+  footer a{color:var(--muted)}
+  .count{color:var(--gold)}
+
+  @media (max-width:600px){
+    h1{font-size:26px}
+    .wrap{padding:20px 13px 70px}
+    .card{padding:15px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Unofficial Player Guide</div>
+    <h1>Valdara Answers</h1>
+    <p class="sub">Ask anything about Critters Quest. Answers come straight from the game docs.</p>
+  </header>
+
+  <div class="disclaimer">
+    <strong>Unofficial fan resource.</strong> Not affiliated with or endorsed by Critters Quest.
+    Answers are drawn from a snapshot of the
+    <a href="https://critters-quest-1.gitbook.io/critters-quest-docs/" target="_blank" rel="noopener">official docs</a>
+    taken 9 Aug 2026 — always verify anything you're spending real money on.
+  </div>
+
+  <div class="searchbox">
+    <input id="q" type="text" autocomplete="off" spellcheck="false"
+           placeholder="e.g. how much does it cost to max my town?">
+    <button class="go" id="goBtn" title="Search">&rarr;</button>
+  </div>
+
+  <div class="chips" id="chips"></div>
+
+  <div id="results"></div>
+
+  <footer>
+    Searching <span class="count" id="docCount">0</span> passages from the Critters Quest documentation.<br>
+    Prototype &mdash; retrieval runs entirely in your browser, no server and no API key.<br>
+    <a href="https://critters-quest-1.gitbook.io/critters-quest-docs/" target="_blank" rel="noopener">Read the full official docs &rarr;</a>
+  </footer>
+
+</div>
+
+<!-- knowledge base: keep corpus.js in the same folder as this file -->
+<script src="corpus.js"></script>
+
+<script>
+/* =======================================================================
+   Retrieval: BM25-flavoured keyword scoring over the corpus.
+   Dependency-free so it can be dropped on any page.
+   The production version swaps this for an LLM call - see api-route.ts.
+   ======================================================================= */
+
+const STOP = new Set(("a an and are as at be but by can could do does for from get got has have how i if in " +
+  "is it its me much my of on or should so than that the their them then there these they this to " +
+  "was what when where which who why will with you your need want know about tell explain " +
+  "many long lot am were been being").split(" "));
+
+const SYN = {
+  // NB: deliberately no "quest" here. $QUEST is the currency and appears in
+  // almost every question, so mapping it to "cost" dragged pricing pages to
+  // the top of unrelated queries.
+  cost:["price","costs","expensive","pay","spend"],
+  upgrade:["upgrading","level","levels","build","building"],
+  gather:["gathering","mine","mining","harvest","farm","farming"],
+  shield:["shields","protect","protection","immune","immunity","safe"],
+  raid:["raiding","attack","attacking","pvp","steal","loot"],
+  gem:["gems","socket","sockets","socketing","jewel"],
+  potion:["potions","heal","healing","brew","alchemy"],
+  town:["settlement","base"],
+  critter:["critters","character","hero","unit"],
+  weapon:["weapons","sword","gear","equipment"],
+  monster:["monsters","boss","bosses","mob","enemy"],
+  clone:["clones","cloned","edition","editions"],
+  tool:["tools","pickaxe","axe","shovel"],
+  bank:["withdraw","withdrawal","deposit","storage"],
+  star:["stars","promotion","promote","promoting"],
+  burn:["burned","burning","destroyed","lose","lost","death","die"]
+};
+
+function tokenize(s){
+  return (s || "").toLowerCase()
+    .replace(/[^a-z0-9%$.\s-]/g, " ")
+    .split(/\s+/)
+    .filter(function(t){ return t && t.length > 1 && !STOP.has(t); });
+}
+
+function expand(tokens){
+  var out = new Set(tokens);
+  tokens.forEach(function(t){
+    Object.keys(SYN).forEach(function(key){
+      var list = SYN[key];
+      if (t === key || list.indexOf(t) !== -1) {
+        out.add(key);
+        list.forEach(function(x){ out.add(x); });
+      }
+    });
+    // crude stemming - "started" must be able to match the tag "start",
+    // "gathering" must match "gather", and so on.
+    if (t.slice(-3) === "ing" && t.length > 5) out.add(t.slice(0, -3));
+    if (t.slice(-2) === "ed"  && t.length > 4) out.add(t.slice(0, -2));
+    if (t.slice(-1) === "s"   && t.length > 3) out.add(t.slice(0, -1));
+    else out.add(t + "s");
+  });
+  return Array.from(out);
+}
+
+var INDEX = DOCS.map(function(d, i){
+  var hay = (d.title + " " + d.tags.join(" ") + " " + d.page + " " + d.body).toLowerCase();
+  return {
+    i: i,
+    title: d.title.toLowerCase(),
+    tags:  d.tags.join(" ").toLowerCase(),
+    page:  d.page.toLowerCase(),
+    body:  d.body.toLowerCase(),
+    hay:   hay,
+    len:   hay.split(/\s+/).length
+  };
+});
+
+var DF = {};
+INDEX.forEach(function(x){
+  var words = new Set(x.hay.match(/[a-z0-9$%.-]+/g) || []);
+  words.forEach(function(w){ DF[w] = (DF[w] || 0) + 1; });
+});
+var N = INDEX.length;
+function idf(w){
+  var df = DF[w] || 0;
+  return Math.log(1 + (N - df + 0.5) / (df + 0.5));
+}
+
+function rxEscape(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
+function search(query){
+  var raw = tokenize(query);
+  if (!raw.length) return [];
+  var terms = expand(raw);
+  var phrase = query.toLowerCase().trim();
+
+  var scored = INDEX.map(function(x){
+    var s = 0;
+    terms.forEach(function(t){
+      var w = idf(t);
+      if (x.title.indexOf(t) !== -1) s += w * 7;
+      if (x.tags.indexOf(t)  !== -1) s += w * 5;
+      if (x.page.indexOf(t)  !== -1) s += w * 3;
+      var m = x.body.match(new RegExp(rxEscape(t), "g"));
+      var hits = m ? m.length : 0;
+      if (hits) s += w * (2.2 * hits) / (hits + 1.4);   // saturating term frequency
+    });
+    if (phrase.length > 8 && x.hay.indexOf(phrase) !== -1) s += 22;
+    s = s / (1 + Math.log(1 + x.len / 400));            // length normalisation
+    return { i: x.i, s: s };
+  });
+
+  return scored
+    .filter(function(r){ return r.s > 1.2; })
+    .sort(function(a, b){ return b.s - a.s; })
+    .slice(0, 5);
+}
+
+/* ---------------------- rendering ---------------------- */
+
+function esc(s){
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function mdInline(s){
+  return esc(s)
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/`([^`]+)`/g, "<code>$1</code>");
+}
+
+function render(md){
+  var lines = md.split("\n");
+  var html = "";
+  var i = 0;
+
+  while (i < lines.length) {
+    var line = lines[i];
+
+    // table
+    if (/^\s*\|/.test(line) && /^\s*\|[\s:|-]+\|\s*$/.test(lines[i + 1] || "")) {
+      var cells = function(r){
+        return r.replace(/^\s*\|/, "").replace(/\|\s*$/, "").split("|").map(function(c){ return c.trim(); });
+      };
+      var head = cells(line);
+      i += 2;
+      var rows = "";
+      while (i < lines.length && /^\s*\|/.test(lines[i])) {
+        rows += "<tr>" + cells(lines[i]).map(function(c){ return "<td>" + mdInline(c) + "</td>"; }).join("") + "</tr>";
+        i++;
+      }
+      html += '<div class="tablewrap"><table><thead><tr>' +
+              head.map(function(h){ return "<th>" + mdInline(h) + "</th>"; }).join("") +
+              "</tr></thead><tbody>" + rows + "</tbody></table></div>";
+      continue;
+    }
+
+    // list
+    if (/^\s*[-*]\s+/.test(line) || /^\s*\d+\.\s+/.test(line)) {
+      var items = "";
+      while (i < lines.length && (/^\s*[-*]\s+/.test(lines[i]) || /^\s*\d+\.\s+/.test(lines[i]))) {
+        items += "<li>" + mdInline(lines[i].replace(/^\s*(?:[-*]|\d+\.)\s+/, "")) + "</li>";
+        i++;
+      }
+      html += "<ul>" + items + "</ul>";
+      continue;
+    }
+
+    // paragraph
+    if (line.trim()) {
+      var p = line;
+      i++;
+      while (i < lines.length && lines[i].trim() && !/^\s*[-*|]/.test(lines[i]) && !/^\s*\d+\./.test(lines[i])) {
+        p += " " + lines[i];
+        i++;
+      }
+      html += "<p>" + mdInline(p) + "</p>";
+      continue;
+    }
+    i++;
+  }
+  return html;
+}
+
+function highlight(html, query){
+  var terms = tokenize(query).filter(function(t){ return t.length > 2; });
+  if (!terms.length) return html;
+  var rx = new RegExp("(?![^<]*>)\\b(" + terms.map(rxEscape).join("|") + ")", "gi");
+  return html.replace(rx, "<mark>$1</mark>");
+}
+
+var resultsEl = document.getElementById("results");
+var qEl = document.getElementById("q");
+
+function ask(query){
+  var hits = search(query);
+
+  if (!hits.length) {
+    resultsEl.innerHTML =
+      '<div class="empty"><h3>Nothing in the docs covers that</h3>' +
+      "<p>Rather than guess, this prototype says nothing at all. Try different wording, " +
+      "or check the full docs &mdash; this demo carries a subset of pages.</p></div>";
+    return;
+  }
+
+  resultsEl.innerHTML =
+    '<div class="status">Found <b>' + hits.length + "</b> relevant " +
+    (hits.length === 1 ? "passage" : "passages") + " in the docs</div>" +
+    hits.map(function(h, n){
+      var d = DOCS[h.i];
+      return '<article class="card' + (n === 0 ? " top" : "") + '">' +
+        (n === 0 ? '<div class="meta"><span class="badge">Best match</span></div>' : "") +
+        "<h2>" + esc(d.title) + "</h2>" +
+        '<div class="meta">Source: <a class="src" href="' + d.url +
+          '" target="_blank" rel="noopener">' + esc(d.page) + " &#8599;</a></div>" +
+        '<div class="body">' + highlight(render(d.body), query) + "</div>" +
+      "</article>";
+    }).join("");
+}
+
+var SUGGESTED = [
+  "How much $QUEST to max every building?",
+  "What can I loot from a raid?",
+  "How do Quick Shield charges work?",
+  "What do gems do in tools vs equipment?",
+  "How much does it cost to repair my town?",
+  "What are the Gold Wheel odds?",
+  "How many squads do I get?",
+  "Can my Master Edition be burned?",
+  "How do I move my town?",
+  "What does Titan's Shield cost?"
+];
+
+var chipsEl = document.getElementById("chips");
+chipsEl.innerHTML = SUGGESTED.map(function(s){
+  return '<button class="chip">' + esc(s) + "</button>";
+}).join("");
+
+chipsEl.addEventListener("click", function(e){
+  if (!e.target.classList.contains("chip")) return;
+  qEl.value = e.target.textContent;
+  ask(qEl.value);
+  window.scrollTo({ top: 200, behavior: "smooth" });
+});
+
+document.getElementById("goBtn").addEventListener("click", function(){ ask(qEl.value); });
+qEl.addEventListener("keydown", function(e){ if (e.key === "Enter") ask(qEl.value); });
+
+document.getElementById("docCount").textContent = DOCS.length;
+ask("quick start guide for new players");
+</script>
+</body>
+</html>
