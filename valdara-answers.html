@@ -78,6 +78,11 @@
   .src:hover{color:var(--blue);border-bottom-color:var(--blue)}
 
   .body{font-size:14.2px;color:#d5daf0}
+  .body h3,.body h4,.body h5,.body h6{
+    margin:14px 0 6px;font-size:14px;font-weight:650;color:var(--gold2);
+    letter-spacing:-.01em;
+  }
+  .body h3:first-child,.body h4:first-child{margin-top:0}
   .body p{margin:0 0 10px}
   .body p:last-child{margin-bottom:0}
   .body strong{color:#fff;font-weight:650}
@@ -297,6 +302,15 @@ function render(md){
       continue;
     }
 
+    // heading
+    const h = line.match(/^\s*(#{1,4})\s+(.*)$/);
+    if (h) {
+      const lvl = Math.min(h[1].length + 2, 6);
+      html += "<h" + lvl + ">" + mdInline(h[2]) + "</h" + lvl + ">";
+      i++;
+      continue;
+    }
+
     // list
     if (/^\s*[-*]\s+/.test(line) || /^\s*\d+\.\s+/.test(line)) {
       var items = "";
@@ -312,7 +326,7 @@ function render(md){
     if (line.trim()) {
       var p = line;
       i++;
-      while (i < lines.length && lines[i].trim() && !/^\s*[-*|]/.test(lines[i]) && !/^\s*\d+\./.test(lines[i])) {
+      while (i < lines.length && lines[i].trim() && !/^\s*[-*|]/.test(lines[i]) && !/^\s*\d+\./.test(lines[i]) && !/^\s*#{1,4}\s/.test(lines[i])) {
         p += " " + lines[i];
         i++;
       }
