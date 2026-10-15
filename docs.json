@@ -1,8 +1,8 @@
 {
   "source": "https://critters-quest-1.gitbook.io/critters-quest-docs/",
-  "fetchedAt": "2026-10-11T16:28:10.418Z",
-  "pageCount": 69,
-  "chunkCount": 128,
+  "fetchedAt": "2026-10-15T15:26:29.859Z",
+  "pageCount": 68,
+  "chunkCount": 127,
   "docs": [
     {
       "page": "About",
@@ -2593,28 +2593,6 @@
       ],
       "body": "# Clone Minting\n\n**Master Editions** can mint clones of themselves for other players to buy and play. As the owner you control the supply, price, and how much bound $QUEST each clone carries. This page covers the economics; see the Clones collectible page for what a clone is.\n\n### Setting up a mint\n\n* A Master Edition can have up to **15 clones** in circulation at once.\n* You set the **mint price in SOL** and the supply. The price is yours to choose; there is no fixed table.\n* You choose how bound $QUEST is allocated to clones, either a fixed amount per clone or a **bonding curve** where earlier mints receive more $QUEST than later ones.\n* You can set a launch date (24-hour minimum delay) and an optional end date.\n\n### What you earn\n\n* Each clone sale pays you in SOL, split between you and the collector based on your configured boost.\n* You earn a **5% royalty** on secondary sales of your clones.\n* Manage active mints and claim earnings from the Clone Dashboard.\n\nAllocating $QUEST to your clones makes them more useful to buyers, since players need $QUEST in a clone to level and promote it.\n\n📷 **Image needed**: mint configuration screen (supply, price, $QUEST allocation).\n\n### Related\n\n* [Buy $QUEST](/critters-quest-docs/how-to-play/buy-usdquest.md) — $QUEST allocated to clones\n* [Marketplace](/critters-quest-docs/how-to-play/marketplace.md) — listing and selling clones\n* [Fees & Taxes](/critters-quest-docs/critter-quest-guides/fees-and-taxes.md) — royalties and fees on sales\n\n---\n\n# Agent Instructions\nThis documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.\n\n## Querying This Documentation\nIf you need additional information that is not directly available in this page, you can query the documentation by asking a question.\n\nPerform an HTTP GET request on the following URL with the `ask` and `goal` query parameters:\n\n```\nGET https://critters-quest-1.gitbook.io/critters-quest-docs/critter-quest-guides/clone-minting.md?ask=&goal=\n```\n\n`ask` is the immediate question: it should be specific, self-contained, and written in natural language.\n`goal` is what the user is ultimately trying to achieve, the reason they need the answer. Sharing it helps GitBook give you a better, more relevant answer. A goal is most helpful when it describes the outcome the user wants rather than restating the question. For example, with `ask=how do I create an API token`, a goal like `automate deployments from our CI pipeline` lets GitBook tailor the answer to that use case.\n\nThe response will contain a direct answer to the question and relevant excerpts and sources from the documentation.\n\nUse this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.",
       "hash": "f68732d74fe5"
-    },
-    {
-      "page": "Brand Kit",
-      "title": "Brand Kit",
-      "heading": null,
-      "url": "https://critters-quest-1.gitbook.io/critters-quest-docs/brand-kit",
-      "blurb": "Your source for official Critters Quest Brand assets.",
-      "tags": [
-        "brand kit",
-        "brand",
-        "kit",
-        "creative commons non-commercial license",
-        "good taste",
-        "critters themselves via the team",
-        "column 1",
-        "74fde7",
-        "5ce6d0",
-        "23740d",
-        "ffb84a"
-      ],
-      "body": "# Brand Kit\n\nYour source for official Critters Quest Brand assets.\n\n## See Figma Community File\n\nAll Critters Quest brand assets — logos, critter art, type, and color palettes — are available in [Figma](https://www.figma.com/design/nF3MIifNLoQb7pDwnuEM5l/Critters-Quest---Community-Board--Community-)\n\n### CREATIVE COMMONS - Non Commercial License\nAll Critters Quest brand assets are released under a **Creative Commons, non-commercial license**. This means our community is free to use, remix, and share critter artwork, logos, and related media for creative projects, fan content, and community-driven initiatives — but never for profit or resale. We ask that all uses remain in **good taste**, aligned with the playful spirit of Critters Quest, and reserve the right for the **Critters themselves (via the team)** to determine what counts as acceptable or unacceptable use. By using these assets, you agree to honor both the license and the community standards that keep Critters Quest true to its world.\n\n### LOGOS - Web\n\n### COLOR - Palette\n\n| Column 1 |\n| --- |\n| #74FDE7 |\n| #5CE6D0 |\n| #23740D |\n| #FFB84A |\n| #235615 |\n| #151414 |\n\n---\n\n# Agent Instructions\nThis documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.\n\n## Querying This Documentation\nIf you need additional information that is not directly available in this page, you can query the documentation by asking a question.\n\nPerform an HTTP GET request on the following URL with the `ask` and `goal` query parameters:\n\n```\nGET https://critters-quest-1.gitbook.io/critters-quest-docs/brand-kit.md?ask=&goal=\n```\n\n`ask` is the immediate question: it should be specific, self-contained, and written in natural language.\n`goal` is what the user is ultimately trying to achieve, the reason they need the answer. Sharing it helps GitBook give you a better, more relevant answer. A goal is most helpful when it describes the outcome the user wants rather than restating the question. For example, with `ask=how do I create an API token`, a goal like `automate deployments from our CI pipeline` lets GitBook tailor the answer to that use case.\n\nThe response will contain a direct answer to the question and relevant excerpts and sources from the documentation.\n\nUse this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.",
-      "hash": "efaaacf75e9f"
     },
     {
       "page": "Glossary",
